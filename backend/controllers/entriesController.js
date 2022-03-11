@@ -1,5 +1,8 @@
+const Food = require('./../model/entryModel')
+
 const getEntries = async (req, res) => {
-    res.status(200).json({ message: 'Hello World!' })
+    const meal = await Food.find()
+    res.status(200).json(meal)
 }
 
 const setEntries = (req, res) => {
