@@ -19,8 +19,10 @@ const updateEntries = async (req, res) => {
     res.status(200).json(updatedMeal)
 }
 
-const deleteEntries = (req, res) => {
-    res.status(200).json({ message: 'Hello World!' })
+const deleteEntries = async (req, res) => {
+    const meal = await Food.findById(req.params.id)
+    await meal.remove()
+    res.status(200).json({ id: req.params.id })
 }
 
 module.exports = {
