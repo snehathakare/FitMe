@@ -10,12 +10,13 @@ const setEntries = async (req, res) => {
     const newMeal = await Food.create({
         meal, food
     })
-
     res.status(200).json(newMeal)
 }
 
-const updateEntries = (req, res) => {
-    res.status(200).json({ message: 'Hello World!' })
+const updateEntries = async (req, res) => {
+    const meal = await Food.findById(req.params.id)
+    const updatedMeal = await Food.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.status(200).json(updatedMeal)
 }
 
 const deleteEntries = (req, res) => {
