@@ -28,7 +28,7 @@ app.delete('/api/entries/:id', deleteEntries)
 
 //user routes
 
-app.get('/api/users', registerUser)
+app.post('/api/users', registerUser)
 
 app.post('/api/users/login', loginUser)
 
