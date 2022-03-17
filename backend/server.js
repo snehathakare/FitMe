@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv').config()
 
 const { getEntries, setEntries, updateEntries, deleteEntries } = require('./controllers/entriesController.js')
 const { registerUser, getMe, loginUser } = require('./controllers/userController.js')
